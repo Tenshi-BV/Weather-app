@@ -12,7 +12,7 @@
     "url": "git+https://github.com/Tenshi-BV/weather-app.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "BV",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tenshi-BV/weather-app/issues"
@@ -20,6 +20,11 @@
   "homepage": "https://github.com/Tenshi-BV/weather-app#readme",
   "devDependencies": {
     "css-loader": "^5.2.4",
+    "eslint": "^7.26.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
     "html-webpack-plugin": "^5.3.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.37.0",
