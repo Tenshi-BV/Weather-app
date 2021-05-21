@@ -7,9 +7,9 @@ import "./style.css";
 // TRY THIS: http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&appid=33eaa4fb488a76dcd98c62d852f4131f
 // npm run build
 
-async function getWeather() {
+async function getWeather(name) {
   const response = await fetch(
-    "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&appid=33eaa4fb488a76dcd98c62d852f4131f",
+    `http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=33eaa4fb488a76dcd98c62d852f4131f`,
     {
       mode: "cors",
     }
@@ -18,4 +18,4 @@ async function getWeather() {
   console.log(weatherData);
 }
 
-getWeather();
+getWeather('koper');
