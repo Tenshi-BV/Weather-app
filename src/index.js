@@ -1,5 +1,6 @@
 import "./style.css";
 import { getWeather } from "./fetch-weather";
+import { locationForm } from "./location-form";
 
 // CALL BY CITY NAME
 // api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
@@ -9,10 +10,17 @@ import { getWeather } from "./fetch-weather";
 // npm run build
 
 (function () {
+  locationForm();
+  const btn = document.querySelector('button');
+  btn.addEventListener('click', () => {
+    alert("Hello World!");
+  });
+
   async function getCurrentWeather(location) {
     const currentWeather = await getWeather(location);
     console.log(currentWeather);
   }
 
   const currentWeather = getCurrentWeather("Radenci");
+  
 })();
