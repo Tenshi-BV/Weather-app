@@ -2,7 +2,7 @@ const locationForm = () => {
   const body = document.querySelector("body");
   const container = document.createElement("div");
   container.innerHTML =
-    '<form><label for="location">Location:</label><input type="text" id="location" name="name"/><button>Search</button></form>';
+    '<form onsubmit="return false"><label for="location">Location:</label><input type="text" id="location" name="name"/><button>Search</button></form>';
 
   /* 
   

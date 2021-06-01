@@ -10,17 +10,21 @@ import { locationForm } from "./location-form";
 // npm run build
 
 (function () {
-  locationForm();
-  const btn = document.querySelector('button');
-  btn.addEventListener('click', () => {
-    alert("Hello World!");
-  });
+  let location;
+  let currentWeather;
 
   async function getCurrentWeather(location) {
-    const currentWeather = await getWeather(location);
+    currentWeather = await getWeather(location);
     console.log(currentWeather);
   }
 
-  const currentWeather = getCurrentWeather("Radenci");
-  
+  locationForm();
+
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", () => {
+    location = document.getElementById("location").value;
+    console.log(location);
+  });
+
+  getCurrentWeather("radenci");
 })();
