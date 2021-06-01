@@ -18,11 +18,15 @@ import { locationForm } from "./location-form";
     console.log(currentWeather);
   }
 
+  function buttonClick() {
+    location = document.getElementById("location").value;
+    getCurrentWeather(location);
+  }
+
   locationForm();
 
   const btn = document.querySelector("button");
   btn.addEventListener("click", () => {
-    location = document.getElementById("location").value;
-    getCurrentWeather(location);
+    buttonClick();
   });
 })();
