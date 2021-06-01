@@ -23,8 +23,6 @@ import { locationForm } from "./location-form";
   const btn = document.querySelector("button");
   btn.addEventListener("click", () => {
     location = document.getElementById("location").value;
-    console.log(location);
+    getCurrentWeather(location);
   });
-
-  getCurrentWeather("radenci");
 })();
