@@ -15,7 +15,11 @@ import { locationForm } from "./location-form";
 
   async function getCurrentWeather(location) {
     currentWeather = await getWeather(location);
-    console.log(currentWeather);
+    if (Array.isArray(currentWeather)) {
+      console.log(currentWeather);
+    } else {
+      console.log(currentWeather);
+    }
   }
 
   function buttonClick() {

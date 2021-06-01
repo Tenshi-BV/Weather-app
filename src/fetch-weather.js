@@ -16,15 +16,21 @@ const getWeather = (location) => {
   }
 
   async function getWeather(name) {
-    const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=33eaa4fb488a76dcd98c62d852f4131f`,
-      {
-        mode: "cors",
-      }
-    );
-    const weatherData = await response.json();
-    const weather = new Weather(weatherData);
-    return weather;
+    let response;
+    try {
+      response = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=33eaa4fb488a76dcd98c62d852f4131f`,
+        {
+          mode: "cors",
+        }
+      );
+      const weatherData = await response.json();
+      const weather = new Weather(weatherData);
+      return weather;
+    } catch (error) {
+      const failiure = [response.status, response.statusText];
+      return failiure;
+    }
   }
 
   return getWeather(location);
