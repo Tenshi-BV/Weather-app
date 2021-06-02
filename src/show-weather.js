@@ -8,12 +8,35 @@ const showWeather = (weather) => {
 
   const container = document.createElement("div");
   container.setAttribute("id", "weatherContainer");
+  body.appendChild(container);
 
-  container.textContent = "Hello World!";
+  const main = document.createElement("div");
+  main.setAttribute("id", "main");
+  container.appendChild(main);
+
+  const temp = document.createElement("div");
+  temp.setAttribute("id", "temp");
+  container.appendChild(temp);
+
+  const humi = document.createElement("div");
+  humi.setAttribute("id", "humi");
+  container.appendChild(humi);
+
+  const wind = document.createElement("div");
+  wind.setAttribute("id", "wind");
+  container.appendChild(wind);
+
+  const cloud = document.createElement("div");
+  cloud.setAttribute("id", "cloud");
+  container.appendChild(cloud);
+
+  const sun = document.createElement("div");
+  sun.setAttribute("id", "sun");
+  container.appendChild(sun);
 
   /*
 
-     this.main = data.weather[0].main; // Clouds, Clear
+      this.main = data.weather[0].main; // Clouds, Clear
       this.icon = data.weather[0].icon;
       this.temp = data.main.temp;
       this.feels_like = data.main.feels_like;
@@ -26,9 +49,7 @@ const showWeather = (weather) => {
       this.sunset = new Date(data.sys.sunset * 1000);
       this.name = data.name;
 
-*/
-
-  body.appendChild(container);
+  */
 };
 
 export { showWeather };
