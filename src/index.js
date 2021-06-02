@@ -1,6 +1,7 @@
 import "./style.css";
 import { getWeather } from "./fetch-weather";
 import { locationForm } from "./location-form";
+import { showWeather } from "./show-weather";
 
 // CALL BY CITY NAME
 // api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
@@ -24,8 +25,7 @@ import { locationForm } from "./location-form";
         alert("unknown error");
       }
     } else {
-      console.log(currentWeather);
-      // SHOW WEATHER
+      showWeather(currentWeather);
     }
   }
 
