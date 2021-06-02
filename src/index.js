@@ -16,9 +16,16 @@ import { locationForm } from "./location-form";
   async function getCurrentWeather(location) {
     currentWeather = await getWeather(location);
     if (Array.isArray(currentWeather)) {
-      console.log(currentWeather);
+      if (currentWeather[0] === 404) {
+        console.log(currentWeather);
+        alert("404, location not found");
+      } else {
+        console.log(currentWeather);
+        alert("unknown error");
+      }
     } else {
       console.log(currentWeather);
+      // SHOW WEATHER
     }
   }
 
