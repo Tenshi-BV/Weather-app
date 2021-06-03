@@ -31,6 +31,9 @@ import { showWeather } from "./show-weather";
 
   function buttonClick() {
     location = document.getElementById("location").value;
+    if (location.length === 0) {
+      return;
+    }
     getCurrentWeather(location);
   }
 
