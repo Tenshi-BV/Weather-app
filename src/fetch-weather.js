@@ -3,8 +3,8 @@ const getWeather = (location) => {
     constructor(data) {
       this.main = data.weather[0].main; // Clouds, Clear
       this.icon = data.weather[0].icon;
-      this.temp = data.main.temp;
-      this.feels_like = data.main.feels_like;
+      this.temp = data.main.temp.toFixed(1);
+      this.feels_like = data.main.feels_like.toFixed(1);
       this.humidity = data.main.humidity;
       this.speed = data.wind.speed;
       this.deg = data.wind.deg;
