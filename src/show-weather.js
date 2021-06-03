@@ -12,33 +12,33 @@ const showWeather = (weather) => {
 
   const main = document.createElement("div");
   main.setAttribute("id", "main");
-  main.textContent = 'Hey';
-  // main.innerHTML = `<h2>${weather.name}</h2><img src="http://openweathermap.org/img/wn/${weather.icon} alt="weather icon for ${weather.main}><p>${weather.main}</p>`;
+  main.innerHTML = `<h2>${weather.name}</h2><img src="http://openweathermap.org/img/wn/${weather.icon}@2x.png" alt="icon for ${weather.main}"><p>${weather.main}</p>`;
   container.appendChild(main);
 
   const temp = document.createElement("div");
   temp.setAttribute("id", "temp");
-  temp.innerHTML = ``;
+  temp.innerHTML = `<p>Temperature: ${weather.temp}°C</p><p>Feels like: ${weather.feels_like}°C</p>`;
   container.appendChild(temp);
 
   const humi = document.createElement("div");
   humi.setAttribute("id", "humi");
-  humi.innerHTML = ``;
+  humi.innerHTML = `<h3>Humidity:</h3><p>${weather.humidity}%</p>`;
   container.appendChild(humi);
 
   const wind = document.createElement("div");
   wind.setAttribute("id", "wind");
-  wind.innerHTML = ``;
+  wind.innerHTML = `<p>Windspeed: ${weather.speed} m/s ${weather.deg}°</p><p>Gust speed: ${weather.gust} m/s</p>`;
   container.appendChild(wind);
 
   const cloud = document.createElement("div");
   cloud.setAttribute("id", "cloud");
-  cloud.innerHTML = ``;
+  cloud.innerHTML = `<h3>Cloudiness:</h3><p>${weather.clouds}%</p>`;
   container.appendChild(cloud);
 
   const sun = document.createElement("div");
   sun.setAttribute("id", "sun");
-  sun.innerHTML = ``;
+  console.log(weather.sunrise);
+  sun.innerHTML = `<p>Sunrise: ${weather.sunrise}</p><p>Sunset: ${weather.sunset}</p>`;
   container.appendChild(sun);
 
   /*
