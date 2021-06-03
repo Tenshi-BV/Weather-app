@@ -1,4 +1,26 @@
 const showWeather = (weather) => {
+
+  function calcSunrise() {
+    let timeH = weather.sunrise.getHours();
+    if (timeH < 9) { timeH = "0" + timeH}
+    let timeM = weather.sunrise.getMinutes();
+    if (timeM < 9) { timeM = "0" + timeM}
+    const time = `${timeH}:${timeM}`;
+    return time;
+  }
+
+  function calcSunset() {
+    let timeH = weather.sunset.getHours();
+    if (timeH < 9) { timeH = "0" + timeH}
+    let timeM = weather.sunset.getMinutes();
+    if (timeM < 9) { timeM = "0" + timeM}
+    const time = `${timeH}:${timeM}`;
+    return time;
+  }
+
+  const sunrise = calcSunrise();
+  const sunset = calcSunset();
+
   const body = document.querySelector("body");
 
   const oldContainer = document.querySelector("#weatherContainer");
@@ -37,26 +59,10 @@ const showWeather = (weather) => {
 
   const sun = document.createElement("div");
   sun.setAttribute("id", "sun");
-  console.log(weather.sunrise);
-  sun.innerHTML = `<p>Sunrise: ${weather.sunrise}</p><p>Sunset: ${weather.sunset}</p>`;
+  sun.innerHTML = `<p>Sunrise: ${sunrise}</p><p>Sunset: ${sunset}</p>`;
   container.appendChild(sun);
 
-  /*
 
-      this.main = data.weather[0].main; // Clouds, Clear
-      this.icon = data.weather[0].icon;
-      this.temp = data.main.temp;
-      this.feels_like = data.main.feels_like;
-      this.humidity = data.main.humidity;
-      this.speed = data.wind.speed;
-      this.deg = data.wind.deg;
-      this.gust = data.wind.gust;
-      this.clouds = data.clouds.all; // %
-      this.sunrise = new Date(data.sys.sunrise * 1000);
-      this.sunset = new Date(data.sys.sunset * 1000);
-      this.name = data.name;
-
-  */
 };
 
 export { showWeather };
