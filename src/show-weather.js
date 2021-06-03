@@ -27,7 +27,7 @@ const showWeather = (weather) => {
 
   const wind = document.createElement("div");
   wind.setAttribute("id", "wind");
-  wind.innerHTML = `<p>Windspeed: ${weather.speed.toFixed(1)} m/s (${(weather.speed / 3.6).toFixed(1)} km/h) ${weather.deg}°</p><p>Gust speed: ${weather.gust.toFixed(1)} m/s (${(weather.gust / 3.6).toFixed(1)} km/h)</p>`;
+  wind.innerHTML = `<p>Wind speed: ${weather.speed.toFixed(1)} m/s (${(weather.speed / 3.6).toFixed(1)} km/h) ${weather.deg}°</p><p>Gust speed: ${weather.gust.toFixed(1)} m/s (${(weather.gust / 3.6).toFixed(1)} km/h)</p>`;
   container.appendChild(wind);
 
   const cloud = document.createElement("div");
