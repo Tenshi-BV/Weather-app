@@ -2,6 +2,7 @@ import "./style.css";
 import { getWeather } from "./fetch-weather";
 import { locationForm } from "./location-form";
 import { showWeather } from "./show-weather";
+import { header } from "./header.js";
 
 // CALL BY CITY NAME
 // api.openweathermap.org/data/2.5/weather?q={city name}&units=metric&appid={API key}
@@ -37,6 +38,7 @@ import { showWeather } from "./show-weather";
     getCurrentWeather(location);
   }
 
+  header();
   locationForm();
 
   const btn = document.querySelector("button");

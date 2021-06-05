@@ -1,19 +1,26 @@
 const showWeather = (weather) => {
-
   function calcSunrise() {
     let timeH = weather.sunrise.getHours();
-    if (timeH < 9) { timeH = "0" + timeH}
+    if (timeH < 9) {
+      timeH = "0" + timeH;
+    }
     let timeM = weather.sunrise.getMinutes();
-    if (timeM < 9) { timeM = "0" + timeM}
+    if (timeM < 9) {
+      timeM = "0" + timeM;
+    }
     const time = `${timeH}:${timeM}`;
     return time;
   }
 
   function calcSunset() {
     let timeH = weather.sunset.getHours();
-    if (timeH < 9) { timeH = "0" + timeH}
+    if (timeH < 9) {
+      timeH = "0" + timeH;
+    }
     let timeM = weather.sunset.getMinutes();
-    if (timeM < 9) { timeM = "0" + timeM}
+    if (timeM < 9) {
+      timeM = "0" + timeM;
+    }
     const time = `${timeH}:${timeM}`;
     return time;
   }
@@ -49,7 +56,11 @@ const showWeather = (weather) => {
 
   const wind = document.createElement("div");
   wind.setAttribute("id", "wind");
-  wind.innerHTML = `<p>Wind speed: ${weather.speed.toFixed(1)} m/s (${(weather.speed / 3.6).toFixed(1)} km/h) ${weather.deg}°</p><p>Gust speed: ${weather.gust.toFixed(1)} m/s (${(weather.gust / 3.6).toFixed(1)} km/h)</p>`;
+  wind.innerHTML = `<p>Wind speed: ${weather.speed.toFixed(1)} m/s (${(
+    weather.speed / 3.6
+  ).toFixed(1)} km/h) ${weather.deg}°</p><p>Gust speed: ${weather.gust.toFixed(
+    1
+  )} m/s (${(weather.gust / 3.6).toFixed(1)} km/h)</p>`;
   container.appendChild(wind);
 
   const cloud = document.createElement("div");
@@ -61,8 +72,6 @@ const showWeather = (weather) => {
   sun.setAttribute("id", "sun");
   sun.innerHTML = `<p>Sunrise: ${sunrise}</p><p>Sunset: ${sunset}</p>`;
   container.appendChild(sun);
-
-
 };
 
 export { showWeather };
