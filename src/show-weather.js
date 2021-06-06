@@ -46,16 +46,19 @@ const showWeather = (weather) => {
 
   const temp = document.createElement("div");
   temp.setAttribute("id", "temp");
+  temp.classList.add('widget');
   temp.innerHTML = `<p>Temperature: ${weather.temp}°C</p><p>Feels like: ${weather.feels_like}°C</p>`;
   container.appendChild(temp);
 
   const humi = document.createElement("div");
   humi.setAttribute("id", "humi");
-  humi.innerHTML = `<h3>Humidity:</h3><p>${weather.humidity}%</p>`;
+  humi.classList.add('widget');
+  humi.innerHTML = `<p>Humidity: ${weather.humidity}%</p>`;
   container.appendChild(humi);
 
   const wind = document.createElement("div");
   wind.setAttribute("id", "wind");
+  wind.classList.add('widget');
   wind.innerHTML = `<p>Wind speed: ${weather.speed.toFixed(1)} m/s (${(
     weather.speed / 3.6
   ).toFixed(1)} km/h) ${weather.deg}°</p><p>Gust speed: ${weather.gust.toFixed(
@@ -65,11 +68,13 @@ const showWeather = (weather) => {
 
   const cloud = document.createElement("div");
   cloud.setAttribute("id", "cloud");
-  cloud.innerHTML = `<h3>Cloudiness:</h3><p>${weather.clouds}%</p>`;
+  cloud.classList.add('widget');
+  cloud.innerHTML = `<p>Cloudiness: ${weather.clouds}%</p>`;
   container.appendChild(cloud);
 
   const sun = document.createElement("div");
   sun.setAttribute("id", "sun");
+  sun.classList.add('widget');
   sun.innerHTML = `<p>Sunrise: ${sunrise}</p><p>Sunset: ${sunset}</p>`;
   container.appendChild(sun);
 };
