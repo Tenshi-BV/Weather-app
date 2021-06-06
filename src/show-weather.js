@@ -36,11 +36,15 @@ const showWeather = (weather) => {
     }
   }
 
+  const humi1 = (100 - weather.humidity) + "%";
+
+
   const sunrise = calcSunrise();
   const sunset = calcSunset();
 
   let tempColor;
   temperatureColor();
+
 
   const body = document.querySelector("body");
 
@@ -69,6 +73,7 @@ const showWeather = (weather) => {
   humi.classList.add("widget");
   humi.innerHTML = `<p>Humidity: ${weather.humidity}%</p>`;
   container.appendChild(humi);
+  humi.style.setProperty('--per', humi1);
 
   const wind = document.createElement("div");
   wind.setAttribute("id", "wind");

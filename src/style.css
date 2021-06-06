@@ -51,7 +51,7 @@ input {
     background-color: #6fccf1;
 }
 .moderate {
-    background-color: #d5d839;
+    background-color: #b6ff41;
 }
 .red {
     background-color: rgb(248, 109, 45);
@@ -60,5 +60,5 @@ input {
 /* HUMIDITY */
 
 #humi {
-    
+    background-image: linear-gradient(rgba(0, 0, 255, 0) var(--per), rgba(0, 0, 255, 1) var(--per));
 }
